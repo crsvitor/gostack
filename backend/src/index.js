@@ -65,7 +65,7 @@ app.get('/projects', (request, response) => {
     ? projects.filter(project => project.title.includes(title))
     : projects;
 
-  return response.json(results);
+  return response.status(200).json(results);
 });
 
 app.post('/projects', (request, response) => {
@@ -75,7 +75,7 @@ app.post('/projects', (request, response) => {
 
   projects.push(project);
 
-  return response.json(project);
+  return response.status(201).json(project);
 });
 
 app.put('/projects/:id', validateProjectId, (request, response) => {
@@ -110,7 +110,7 @@ app.delete('/projects/:id', validateProjectId, (request, response) => {
   
   projects.splice(projectIndex, 1);
   
-  return response.response(204).send();
+  return response.status(204).send();
 });
 
 app.listen(3333, () => {

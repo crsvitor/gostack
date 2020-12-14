@@ -1,4 +1,9 @@
-import React, { useEffect, useRef, useImperativeHandle, forwardRef } from 'react';
+import React, {
+  useEffect,
+  useRef,
+  useImperativeHandle,
+  forwardRef,
+} from 'react';
 import { TextInputProps } from 'react-native';
 import { useField } from '@unform/core';
 
@@ -19,7 +24,7 @@ interface InputRef {
 
 const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   { name, icon, ...rest },
-  ref
+  ref,
 ) => {
   const inputElementRef = useRef<any>(null);
 
@@ -29,7 +34,7 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   useImperativeHandle(ref, () => ({
     focus() {
       inputElementRef.current.focus();
-    }
+    },
   }));
 
   useEffect(() => {
@@ -50,18 +55,18 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
 
   return (
     <Container>
-      <Icon name={icon} size={20} color="#666360"/>
+      <Icon name={icon} size={20} color="#666360" />
       <TextInput
         ref={inputElementRef}
         keyboardAppearance="dark"
         placeholderTextColor="#666360"
         onChangeText={value => {
-          inputValueRef.current.value = value
+          inputValueRef.current.value = value;
         }}
         {...rest}
       />
     </Container>
   );
-}
+};
 
 export default forwardRef(Input);

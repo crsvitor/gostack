@@ -39,8 +39,8 @@ const SignIn: React.FC = () => {
   return (
     <>
       <KeyboardAvoidingView
-        style={{ flex:1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined }
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
         <ScrollView
@@ -53,7 +53,11 @@ const SignIn: React.FC = () => {
               <Title>Faça seu Logon</Title>
             </View>
 
-            <Form ref={formRef} onSubmit={handleSignIn} style={{ width: '100%'}}>
+            <Form
+              ref={formRef}
+              onSubmit={handleSignIn}
+              style={{ width: '100%' }}
+            >
               <Input
                 autoCorrect={false}
                 autoCapitalize="none"
@@ -87,11 +91,13 @@ const SignIn: React.FC = () => {
               </Button>
             </Form>
 
-            <ForgotPassword onPress={() => {}}>
+            <ForgotPassword
+              onPress={() => {
+                console.log('a');
+              }}
+            >
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
             </ForgotPassword>
-
-
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -102,6 +108,6 @@ const SignIn: React.FC = () => {
       </CreateAccountButton>
     </>
   );
-}
+};
 
 export default SignIn;

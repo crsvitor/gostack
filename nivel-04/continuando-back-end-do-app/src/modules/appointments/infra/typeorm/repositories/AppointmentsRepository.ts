@@ -34,7 +34,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
         provider_id,
         date: Raw(
           dateFileName =>
-            `to_char(${dateFileName}, MM-YYYY) = '${parsedMonth}-${year}'`,
+            `to_char(${dateFileName}, 'MM-YYYY') = '${parsedMonth}-${year}'`,
         ),
       },
     });
@@ -44,9 +44,9 @@ class AppointmentsRepository implements IAppointmentsRepository {
 
   public async findAllInDayFromProvider({
     provider_id,
-    year,
-    month,
     day,
+    month,
+    year,
   }: IFindAllInDayFromProviderDTO): Promise<Appointment[]> {
     const parsedDay = String(day).padStart(2, '0');
     const parsedMonth = String(month).padStart(2, '0');
@@ -56,9 +56,10 @@ class AppointmentsRepository implements IAppointmentsRepository {
         provider_id,
         date: Raw(
           dateFileName =>
-            `to_char(${dateFileName}, DD-MM-YYYY) = '${parsedDay}-${parsedMonth}-${year}'`,
+            `to_char(${dateFileName}, 'DD-MM-YYYY') = '${parsedDay}-${parsedMonth}-${year}'`,
         ),
       },
+      relations: ['user'],
     });
 
     return appointments;

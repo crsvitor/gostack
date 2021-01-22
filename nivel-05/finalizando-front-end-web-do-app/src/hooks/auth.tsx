@@ -37,12 +37,12 @@ const AuthProvider: React.FC = ({ children }) => {
       password,
     });
 
-    const { token, userWithoutPassword } = response.data;
+    const { token, user } = response.data;
 
     localStorage.setItem('@GoBarber:token', token);
-    localStorage.setItem('@GoBarber:user', JSON.stringify(userWithoutPassword));
+    localStorage.setItem('@GoBarber:user', JSON.stringify(user));
 
-    setData({ token, user: userWithoutPassword });
+    setData({ token, user });
   }, []);
 
   const signOut = useCallback(() => {

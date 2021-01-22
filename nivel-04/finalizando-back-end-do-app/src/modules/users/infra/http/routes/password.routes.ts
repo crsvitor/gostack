@@ -21,6 +21,9 @@ passwordRouter.post(
       password: Joi.string().required(),
       password_confirmation: Joi.string().valid(Joi.ref('password')),
     },
+    // [Segments.QUERY]: {
+    //   token: Joi.string().uuid().required(),
+    // },
   }),
   resetPasswordController.create,
 );

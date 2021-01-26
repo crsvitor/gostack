@@ -55,7 +55,7 @@ const Dashboard: React.FC = () => {
   }, []);
 
   const [appointments, setAppointments] = useState<Appointment[]>([]);
-  console.log(appointments);
+  // console.log(appointments);
 
   const handleMonthChange = useCallback((month: Date) => {
     setCurrentMonth(month);
@@ -88,6 +88,8 @@ const Dashboard: React.FC = () => {
           ...appointment,
           hourFormatted: parseISO(appointment.date).getHours(),
         }));
+
+        console.log(response.data);
 
         setAppointments(appointmentsFormatted);
       });

@@ -43,14 +43,13 @@ const SignIn: React.FC = () => {
   const passwordInputRef = useRef<TextInput>(null);
   const navigation = useNavigation();
 
-  const { signIn, user } = useAuth();
-
-  console.log(user);
+  const { signIn } = useAuth();
 
   const handleSignIn = useCallback(
     async (data: SignInFormData) => {
       try {
         formRef.current?.setErrors({});
+
         const schema = Yup.object().shape({
           email: Yup.string()
             .required('E-mail obrigatório')
@@ -66,26 +65,19 @@ const SignIn: React.FC = () => {
           email: data.email,
           password: data.password,
         });
-
-        // history.push('/dashboard');
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrros(err);
+          console.log(errors);
           formRef.current?.setErrors(errors);
 
-          // return;
+          return;
         }
 
         Alert.alert(
           'Erro na autenticação',
           'Ocorreu um erro ao fazer login, cheque as credenciais.',
         );
-
-        // addToast({
-        //   type: 'error',
-        //   title: 'Erro na autenticação',
-        //   description: 'Ocorreu um erro ao fazer login, cheque as credenciais.',
-        // });
       }
     },
     [signIn],
@@ -148,7 +140,7 @@ const SignIn: React.FC = () => {
 
             <ForgotPassword
               onPress={() => {
-                console.log('a');
+                console.log('Forgot Password Button was just touched');
               }}
             >
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>

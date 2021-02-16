@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { render } from 'react-native-testing-library';
 
 import SignIn from '../../pages/SignIn';
 
@@ -11,9 +11,9 @@ jest.mock('@react-navigation/native', () => {
 
 describe('SignIn page', () => {
   it('should contains email/password inputs', () => {
-    const { findByPlaceholderText } = render(<SignIn />);
+    const { getByPlaceholder } = render(<SignIn />);
 
-    expect(findByPlaceholderText('E-mail')).toBeTruthy();
-    expect(findByPlaceholderText('Senha')).toBeTruthy();
+    expect(getByPlaceholder('E-mail')).toBeTruthy();
+    expect(getByPlaceholder('Senha')).toBeTruthy();
   });
 });

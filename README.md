@@ -1,5 +1,5 @@
 # GoStack - GoBarber
-Welcome to my study code developed throught GoStack's Bootcamp, the image bellow sumarizes what I have built and learned within three months.
+Welcome to my study code repository developed throught GoStack's Bootcamp, the image bellow sumarizes what I have built and learned within three months.
 
 ![gobarber_project](https://user-images.githubusercontent.com/65800961/115953347-4b114b00-a4c1-11eb-8c22-8ce4bc3c8ca4.jpeg)
 

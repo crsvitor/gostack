@@ -1,7 +1,15 @@
-# gostack
-GoStack Bootcamp study codes
+# GoStack - GoBarber
+Welcome to my study code developed throught GoStack's Bootcamp, the image bellow sumarizes what I have built and learned within three months.
 
-Project proposed in GoStack Bootcamp, a Full Stack Application built using React, React Native and Node, also PostgreSQL, MongoDB and Redis as databases. 
-I develop a scheduling app for beauty salons and barbers. 
-And it has been very important to understand each field of development and how create a performing and up to date application. 
-Using Api rest, Relational and Non Relational Databases, Solid Principles, TDD, React and React-Native environment and features, plus related Libs. 
+![gobarber_project](https://user-images.githubusercontent.com/65800961/115953347-4b114b00-a4c1-11eb-8c22-8ce4bc3c8ca4.jpeg)
+
+This project purpose is to help barbershops dealing with Agenda, basically on the app you can schedule your appointment with your barber and in case you are a barber you can check your appointments throught the website.  
+
+Tecnologies used in GoBarber:
+- React
+- React Native
+- Node
+- PostgreSQL
+- Redis
+
+Any questions my linkedin: https://www.linkedin.com/in/crsvitor/
